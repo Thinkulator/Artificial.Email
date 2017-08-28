@@ -1,0 +1,7 @@
+smtpd_sasl_auth_enable=yes
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination
+broken_sasl_auth_clients = yes
+
+virtual_transport=email_route
+content_filter=email_route
+
