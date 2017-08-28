@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Artificial" disableURLRewriting="true">
+<!-- Connection to a read-only replica of the DB (or the master DB, but with read only access) -->
+   <Resource
+    defaultTransactionIsolation="READ_COMMITTED"
+    driverClassName="org.postgresql.Driver"
+    maxActive="20"
+    maxIdle="10"
+    maxWait="5000"
+    name="jdbc/artificial_read"
+    password=""
+    type="javax.sql.DataSource"
+    url="jdbc:postgresql://localhost:5432/artificial"
+    username=""
+    socketTimeout="30"
+    validationQuery="select null"/>
+   
+<!-- Connection to a writable replica of the DB (or the master DB, but with read only access) -->
+   <Resource
+    defaultTransactionIsolation="READ_COMMITTED"
+    driverClassName="org.postgresql.Driver"
+    maxActive="20"
+    maxIdle="10"
+    maxWait="5000"
+    name="jdbc/artificial_write"
+    password=""
+    type="javax.sql.DataSource"
+    url="jdbc:postgresql://localhost:5432/artificial"
+    username=""
+    socketTimeout="30"
+    validationQuery="select null"/>
+
+<!-- Connection to a read-only replica of the DB (or the master DB, but with read only access) -->
+   <Resource
+    defaultTransactionIsolation="READ_COMMITTED"
+    driverClassName="org.postgresql.Driver"
+    maxActive="20"
+    maxIdle="10"
+    maxWait="5000"
+    name="jdbc/thinkulator_read"
+    password=""
+    type="javax.sql.DataSource"
+    url="jdbc:postgresql://localhost:5432/thinkulator"
+    username=""
+    socketTimeout="30"
+    validationQuery="select null"/>
+
+<!-- Connection to a writable replica of the DB (or the master DB, but with read only access) -->
+   <Resource
+    defaultTransactionIsolation="SERIALIZABLE"
+    driverClassName="org.postgresql.Driver"
+    maxActive="20"
+    maxIdle="10"
+    maxWait="5000"
+    name="jdbc/thinkulator_write"
+    password=""
+    type="javax.sql.DataSource"
+    url="jdbc:postgresql://localhost:5432/thinkulator"
+    username=""
+    socketTimeout="30"
+    validationQuery="select null"/>
+   
+</Context>
