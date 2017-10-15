@@ -8,10 +8,10 @@
     maxIdle="10"
     maxWait="5000"
     name="jdbc/artificial_read"
-    password=""
+    password="${ARTIFICIAL_READ_PASSWORD}"
     type="javax.sql.DataSource"
-    url="jdbc:postgresql://localhost:5432/artificial"
-    username=""
+    url="jdbc:postgresql://db:5432/artificial"
+    username="artificial_read"
     socketTimeout="30"
     validationQuery="select null"/>
    
@@ -23,10 +23,10 @@
     maxIdle="10"
     maxWait="5000"
     name="jdbc/artificial_write"
-    password=""
+    password="${ARTIFICIAL_WRITE_PASSWORD}"
     type="javax.sql.DataSource"
-    url="jdbc:postgresql://localhost:5432/artificial"
-    username=""
+    url="jdbc:postgresql://db:5432/artificial"
+    username="artificial_write"
     socketTimeout="30"
     validationQuery="select null"/>
 
@@ -38,10 +38,10 @@
     maxIdle="10"
     maxWait="5000"
     name="jdbc/thinkulator_read"
-    password=""
+    password="${THINKULATOR_READ_PASSWORD}"
     type="javax.sql.DataSource"
-    url="jdbc:postgresql://localhost:5432/thinkulator"
-    username=""
+    url="jdbc:postgresql://db:5432/thinkulator"
+    username="thinkulator_read"
     socketTimeout="30"
     validationQuery="select null"/>
 
@@ -53,10 +53,10 @@
     maxIdle="10"
     maxWait="5000"
     name="jdbc/thinkulator_write"
-    password=""
+    password="${THINKULATOR_WRITE_PASSWORD}"
     type="javax.sql.DataSource"
-    url="jdbc:postgresql://localhost:5432/thinkulator"
-    username=""
+    url="jdbc:postgresql://db:5432/thinkulator"
+    username="thinkulator_write"
     socketTimeout="30"
     validationQuery="select null"/>
    

@@ -1,4 +1,5 @@
---
+\c artificial
+
 -- PostgreSQL database dump
 --
 

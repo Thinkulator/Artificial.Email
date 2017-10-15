@@ -1,3 +1,4 @@
+\c thinkulator
 --
 -- PostgreSQL database dump
 --
