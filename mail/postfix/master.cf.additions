@@ -3,4 +3,4 @@
  -o content_filter=
 
 #Mail processing to deliver to the DB
-email_route unix -    n    n    -    10    pipe flags=FR user=tomcat  argv=/var/spool/postfix/store.php $(client_address) $(sasl_username) $(sender) $(recipient)
+email_route unix -    n    n    -    10    pipe flags=FR user=tomcat  argv=/store.php $(client_address) $(sasl_username) $(sender) $(recipient)

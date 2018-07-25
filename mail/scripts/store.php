@@ -3,7 +3,7 @@
 require_once('DB.php');
 require_once 'Mail/mimeDecode.php';
 
-$db_dsn = 'pgsql://artificial_spool:PASSWORD@localhost:5432/artificial';
+$db_dsn = 'pgsql://artificial_spool:'+$ENV{'ARTIFICIAL_SPOOL_PASSWORD'}+'@db:5432/artificial';
 
 
 #read in the message itself

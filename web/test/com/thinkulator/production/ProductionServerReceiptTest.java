@@ -31,7 +31,8 @@ public class ProductionServerReceiptTest {
         props.put("mail.smtp.host", "us1.artificial.email");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "587");
-
+        props.put("mail.smtp.connectiontimeout","30000");
+        
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
@@ -56,7 +57,8 @@ public class ProductionServerReceiptTest {
         props.put("mail.smtp.host", "us1.artificial.email");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "587");
-
+        props.put("mail.smtp.connectiontimeout","30000");
+        
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
@@ -74,6 +76,7 @@ public class ProductionServerReceiptTest {
         Transport.send(message);
 		
     }
+   
     
     @Test
     public void testSMTPAuthSend() throws AddressException, MessagingException{
@@ -107,8 +110,10 @@ public class ProductionServerReceiptTest {
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.connectiontimeout","30000");
+        props.put("mail.smtp.timeout", "10000");    
         props.put("mail.debug","true");
-
+        
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
@@ -126,16 +131,23 @@ public class ProductionServerReceiptTest {
         Transport.send(message);
     }
     
+    
     @Test
     public void testSSL_SMTPAuthSend() throws AddressException, MessagingException{
         Properties props = new Properties();
+        props.put("mail.transport.protocol", "smtps");
         props.put("mail.smtp.host", "us1.artificial.email");
         props.put("mail.smtp.socketFactory.port", "6465");
         props.put("mail.smtp.socketFactory.class",
 				"javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "6465");
-
+        props.put("mail.smtp.connectiontimeout","30000");
+        props.put("mail.smtp.timeout", "10000");    
+        props.put("mail.debug","true");
+        props.put("mail.smtp.ssl.enable", "true");
+        
+        
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
@@ -154,7 +166,7 @@ public class ProductionServerReceiptTest {
     }
 
     @Test
-    public void test_SMTPAuthSend_BCC() throws AddressException, MessagingException{
+    public void testSSL_SMTPAuthSend_BCC() throws AddressException, MessagingException{
         Properties props = new Properties();
         props.put("mail.smtp.host", "us1.artificial.email");
         props.put("mail.smtp.socketFactory.port", "6465");
@@ -162,7 +174,11 @@ public class ProductionServerReceiptTest {
 				"javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "6465");
-
+        props.put("mail.smtp.connectiontimeout","10000");
+        props.put("mail.smtp.timeout", "10000");    
+        props.put("mail.debug","true");
+        props.put("mail.smtp.ssl.enable", "true");
+       
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
